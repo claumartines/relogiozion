@@ -197,7 +197,7 @@
                 >
                   <span class="h2" data-size="7em">
                     <h2 style="font-size:7em;">Relógio de Oração</h2>
-                    <h2 style="font-size:7em;">7NES</h2>
+                    <h2 style="font-size:7em;">Conferência Voz de Sião</h2>
                   </span>
                 </div>
               </div>
@@ -353,56 +353,51 @@
   <script>
     // Array Único com todos horários
     // Adicionamos a propriedade recommended: 1 (sim) ou 0 (não)
-    const horariosData = [
-      { hora: "0:00",  link: "https://chat.whatsapp.com/D8UO7WEr2Cy8vBA08eFvWE",  recommended: 0 },
-      { hora: "0:30",  link: "https://chat.whatsapp.com/BmSIE3aGfqN7Bqw9JDXeZA",  recommended: 0 },
-      { hora: "1:00",  link: "https://chat.whatsapp.com/Jc3ItnSuQhGIi85EnIpSul",  recommended: 0 },
-      { hora: "1:30",  link: "https://chat.whatsapp.com/Dg77DXUQoIBBK2uPLMSntY",  recommended: 0 },
-      { hora: "2:00",  link: "https://chat.whatsapp.com/HaHaUqJnDXE4hjtNxGJ1Na",  recommended: 0 },
-      { hora: "2:30",  link: "https://chat.whatsapp.com/CbBHm7HwB8IDOGtImME4Bg",  recommended: 0 },
-      { hora: "3:00",  link: "https://chat.whatsapp.com/G079H5kHo0pBXn7BYR2140",  recommended: 0 },
-      { hora: "3:30",  link: "https://chat.whatsapp.com/GayJBG4RMRG2MSDFtDQOm4",  recommended: 0 },
-      { hora: "4:00",  link: "https://chat.whatsapp.com/KRovVuPoSFWAcAS20bpHeK",  recommended: 0 },
-      { hora: "4:30",  link: "https://chat.whatsapp.com/CNkrq7OMWQU8Mh0JMgQ4rg",  recommended: 0 },
-      { hora: "5:00",  link: "https://chat.whatsapp.com/ECnrywvKef9DZvXWkFkWtC",  recommended: 0 },
-      { hora: "5:30",  link: "https://chat.whatsapp.com/D9ZanoKUaIQ9iSlm833MwT",  recommended: 0 },
-      { hora: "6:00",  link: "https://chat.whatsapp.com/DAVFsoXuJUbJjrztbMmjDv",  recommended: 0 },
-      { hora: "6:30",  link: "https://chat.whatsapp.com/CtqChpP8rIT71sPGbKhHDB",  recommended: 0 },
-      { hora: "7:00",  link: "https://chat.whatsapp.com/DPQqCYBuv3x8jjbMAVrnY5",  recommended: 0 },
-      { hora: "7:30",  link: "https://chat.whatsapp.com/JdP8KaCJ63L7Lo52upu6VJ",  recommended: 0 },
-      { hora: "8:00",  link: "https://chat.whatsapp.com/IfROtmnqOp594gpXOFyRIf",  recommended: 0 },
-      { hora: "8:30",  link: "https://chat.whatsapp.com/JxHnwlmi0upADnQJIOdZzt",  recommended: 0 },
-      { hora: "9:00",  link: "https://chat.whatsapp.com/EFdR7t8QLS4LAuqDtJYkGz",  recommended: 0 },
-      { hora: "9:30",  link: "https://chat.whatsapp.com/LD9KuiBOFwRK5g0ghs6Rbc",  recommended: 0 },
-      { hora: "10:00", link: "https://chat.whatsapp.com/Cxa1X0MiMKSDNIsBengtQm",  recommended: 0 },
-      { hora: "10:30", link: "https://chat.whatsapp.com/Bk8LnWYb6AxIZ38JrivhTN",  recommended: 0 },
-      { hora: "11:00", link: "https://chat.whatsapp.com/FRcTCijrgEH4BuZ9ejMQSC",  recommended: 0 },
-      { hora: "11:30", link: "https://chat.whatsapp.com/CppWW3jTTDFKWeqtG2NMlS",  recommended: 0 },
-      { hora: "12:00", link: "https://chat.whatsapp.com/K83OFdPzVEj7NyWionp7Ra",  recommended: 0 },
-      { hora: "12:30", link: "https://chat.whatsapp.com/DeiuM9jDscIDlVzQmxK8wO",  recommended: 0 },
-      { hora: "13:00", link: "https://chat.whatsapp.com/Kh2iVQexW4BCdcHnCgzT7P",  recommended: 0 },
-      { hora: "13:30", link: "https://chat.whatsapp.com/HnNdRMxDFBW6kUY1vonwE5",  recommended: 1 },
-      { hora: "14:00", link: "https://chat.whatsapp.com/E1mjxJgqVo7GMCeVl5pZ9B",  recommended: 1 },
-      { hora: "14:30", link: "https://chat.whatsapp.com/KfDwhFqMwjv5kKodDNnNUE",  recommended: 1 },
-      { hora: "15:00", link: "https://chat.whatsapp.com/LCtuHmR1xUmDdqpuPSZwNT",  recommended: 0 },
-      { hora: "15:30", link: "https://chat.whatsapp.com/JP26KMaFfH68F4EqJaxOhg",  recommended: 1 },
-      { hora: "16:00", link: "https://chat.whatsapp.com/Gb0UvoA2hPYLpo9ZpktSwk",  recommended: 0 },
-      { hora: "16:30", link: "https://chat.whatsapp.com/HH2kPJDNqkdA41ldbO9rpb",  recommended: 1 },
-      { hora: "17:00", link: "https://chat.whatsapp.com/KfOOL3GeiEhD1pmZCjpwUV",  recommended: 0 },
-      { hora: "17:30", link: "https://chat.whatsapp.com/KzkNhmT3S906lbc5pEKJGS",  recommended: 1 },
-      { hora: "18:00", link: "https://chat.whatsapp.com/KtWOZJ2dwCR1sQ4ITZq2GV",  recommended: 1 },
-      { hora: "18:30", link: "https://chat.whatsapp.com/CDENCBqVIZkFC0Ad53AjpA",  recommended: 1 },
-      { hora: "19:00", link: "https://chat.whatsapp.com/BAfqEoxonihFQO9x9A1ily",  recommended: 1 },
-      { hora: "19:30", link: "https://chat.whatsapp.com/IGIuJ6JkJzqJseUbB4S1Zl",  recommended: 0 },
-      { hora: "20:00", link: "https://chat.whatsapp.com/EJeFFZbhXgP9ueyCNhT5ys",  recommended: 0 },
-      { hora: "20:30", link: "https://chat.whatsapp.com/GQP2g9SvA6CKPHTrVnim5A",  recommended: 0 },
-      { hora: "21:00", link: "https://chat.whatsapp.com/EXiQ2T6u8JIEbL8YVswy28",  recommended: 0 },
-      { hora: "21:30", link: "https://chat.whatsapp.com/DYo8q3oV8LPK8Az4sd4MjE",  recommended: 0 },
-      { hora: "22:00", link: "https://chat.whatsapp.com/INY7bXlf8EM3Vweoj3tWKd",  recommended: 0 },
-      { hora: "22:30", link: "https://chat.whatsapp.com/KVxUmnnSG5tDMPHf5XKWMO",  recommended: 0 },
-      { hora: "23:00", link: "https://chat.whatsapp.com/B8AWAdkFYCwDDaAWtiYH33",  recommended: 0 },
-      { hora: "23:30", link: "https://chat.whatsapp.com/LkM65pvqU9Z2Ld4MOQpWoN",  recommended: 0 },
-    ];
+const horariosData = [
+  { hora: "00h00 - 00h30", link: "https://chat.whatsapp.com/FILD07PldFqDkHmQwEZMWl", recommended: 0 },
+  { hora: "00h30 - 01h00", link: "https://chat.whatsapp.com/KdCf3yDOlWeCzabHGjveQI", recommended: 0 },
+  { hora: "01h00 - 01h30", link: "https://chat.whatsapp.com/FCq2COJd6CEICmdTOGCfzI", recommended: 0 },
+  { hora: "01h30 - 02h00", link: "https://chat.whatsapp.com/HvAuFcFkh3EHIhLrjrGhgJ", recommended: 0 },
+  { hora: "02h00 - 02h30", link: "https://chat.whatsapp.com/JYqS6nG9ztA9B8FET3qXX6", recommended: 0 },
+  { hora: "02h30 - 03h00", link: "https://chat.whatsapp.com/GCY9iEkRYhy8bN87Mlw0y4", recommended: 0 },
+  { hora: "03h00 - 03h30", link: "https://chat.whatsapp.com/KVP7ChfuRjwIZEitHo51Fk", recommended: 0 },
+  { hora: "03h30 - 04h00", link: "https://chat.whatsapp.com/FZ88rsm6XyfG5I3pUvPNok", recommended: 0 },
+  { hora: "04h00 - 04h30", link: "https://chat.whatsapp.com/GRyHesaMfOb7ysscxfACFu", recommended: 0 },
+  { hora: "04h30 - 05h00", link: "https://chat.whatsapp.com/IAKyei2E7aBCFfY7TJIepX", recommended: 0 },
+  { hora: "05h00 - 05h30", link: "https://chat.whatsapp.com/F1TEdd0hkKwAdolCWZehTb", recommended: 0 },
+  { hora: "05h30 - 06h00", link: "https://chat.whatsapp.com/K4gtJMl46qG9AZXSyzaghD", recommended: 0 },
+
+  { hora: "08h00 - 08h30", link: "https://chat.whatsapp.com/KBXxMUV4qejE9Vvhz9zj2X", recommended: 0 },
+  { hora: "08h30 - 09h00", link: "https://chat.whatsapp.com/FShiGxtBofvJYrUTR2feuT", recommended: 0 },
+  { hora: "09h00 - 09h30", link: "https://chat.whatsapp.com/H7pYByjrkYG45YZNimKyz3", recommended: 0 },
+  { hora: "09h30 - 10h00", link: "https://chat.whatsapp.com/DkcR6Q18inI4l1FhKYHcU7", recommended: 0 },
+
+  { hora: "10h00 - 10h30", link: "https://chat.whatsapp.com/KE6CkbO4FoQImK41OD5XZC", recommended: 0 },
+  { hora: "10h30 - 11h00", link: "https://chat.whatsapp.com/CoFJxGGKXvXDIENwEMoF5M", recommended: 0 },
+  { hora: "11h00 - 11h30", link: "https://chat.whatsapp.com/K0BajYkkQsa5RXBxydjk2D", recommended: 0 },
+  { hora: "11h30 - 12h00", link: "https://chat.whatsapp.com/KXHdulfS8brApbxDOyhZ3J", recommended: 0 },
+  { hora: "12h00 - 12h30", link: "https://chat.whatsapp.com/FbPc5e2Y6EhAxcjqPDLCuJ", recommended: 0 },
+  { hora: "12h30 - 13h00", link: "https://chat.whatsapp.com/E0XNHvDBCIgB8RmBv6pNnZ", recommended: 0 },
+  { hora: "13h00 - 13h30", link: "https://chat.whatsapp.com/Jb6gmspndEk8flBCB7Ynmp", recommended: 0 },
+  { hora: "13h30 - 14h00", link: "https://chat.whatsapp.com/H6uGTb1aq1GCG5zjSm0WuO", recommended: 0 },
+  { hora: "14h00 - 14h30", link: "https://chat.whatsapp.com/JRctZ9P0AslLDdc2oU2bB5", recommended: 0 },
+  { hora: "14h30 - 15h00", link: "https://chat.whatsapp.com/Ho5rOrDmpaU1s7xAwB77cT", recommended: 0 },
+  { hora: "15h00 - 15h30", link: "https://chat.whatsapp.com/CS4dYJPpvgN5dHtBrVB7nr", recommended: 0 },
+  { hora: "15h30 - 16h00", link: "https://chat.whatsapp.com/JYTJivS5l9S5T66P0hOKvI", recommended: 0 },
+  { hora: "16h00 - 16h30", link: "https://chat.whatsapp.com/DyvWOognhYxDznhZEGkFHd", recommended: 0 },
+  { hora: "16h30 - 17h00", link: "https://chat.whatsapp.com/DevCH49V1UDEmxlDcKgG3Y", recommended: 0 },
+  { hora: "17h00 - 17h30", link: "https://chat.whatsapp.com/DezSsFbHmP3DXBsOqMjq4z", recommended: 0 },
+  { hora: "17h30 - 18h00", link: "https://chat.whatsapp.com/DNSDN0GxzZkHRsEeNxgFrO", recommended: 0 },
+
+  { hora: "20h00 - 20h30", link: "https://chat.whatsapp.com/FNEF2mvHIgyFZ0G9eoTrlX", recommended: 0 },
+  { hora: "20h30 - 21h00", link: "https://chat.whatsapp.com/Bz6Vi9mcjb3BC6y89EjbeC", recommended: 0 },
+  { hora: "21h00 - 21h30", link: "https://chat.whatsapp.com/J8wC1oQ9kVmHKJLbqMSsOD", recommended: 0 },
+  { hora: "21h30 - 22h00", link: "https://chat.whatsapp.com/FtTKm837SjKJ5SOukGpBwY", recommended: 0 },
+  { hora: "22h00 - 22h30", link: "https://chat.whatsapp.com/FQ5A6WoqVzkKxP5BbXR1ZM", recommended: 0 },
+  { hora: "22h30 - 23h00", link: "https://chat.whatsapp.com/EoBMQ5N43glBtwUa0m6cXt", recommended: 0 },
+  { hora: "23h00 - 23h30", link: "https://chat.whatsapp.com/I9VqNLI1QbF2rpleBwYWuo", recommended: 0 },
+  { hora: "23h30 - 00h00", link: "https://chat.whatsapp.com/LmivSvA2eBz1lQTILFDJRm", recommended: 0 },
+];
 
     // Seletores dos containers
     const containerRecomendados = document.querySelector(".recomendados");
