@@ -251,7 +251,7 @@ const horariosData = [
   { hora: "22:00", link: "https://chat.whatsapp.com/FQ5A6WoqVzkKxP5BbXR1ZM", recommended: 1 },
   { hora: "22:30", link: "https://chat.whatsapp.com/EoBMQ5N43glBtwUa0m6cXt", recommended: 1 },
   { hora: "23:00", link: "https://chat.whatsapp.com/I9VqNLI1QbF2rpleBwYWuo", recommended: 1 },
-  { hora: "23:30", link: "https://chat.whatsapp.com/LmivSvA2eBz1lQTILFDJRm", recommended: 0 },
+  { hora: "23:30", link: "https://chat.whatsapp.com/LmivSvA2eBz1lQTILFDJRm", recommended: 1 },
 ];
 
     // Seletores dos containers
@@ -288,6 +288,12 @@ const horariosData = [
         containerNoRecomendados.innerHTML += html;
       }
     });
+
+    // Verifica se o containerNoRecomendados está vazio e oculta o título caso esteja
+    if (containerNoRecomendados.innerHTML.trim() === "") {
+      document.querySelector('.no_recomendados_title').style.display = 'none';
+    }
+
   </script>
 </body>
 </html>
