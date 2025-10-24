@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio de Oração e Jejum Corporativo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #02161e;
+            min-height: 100vh;
+        }
+
+        header {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            background-image: url('https://storage2.snappages.site/2CD49G/assets/images/11060006_2160x976_2500.png');
+            background-size: cover;
+            background-position: center center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .gradient {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 160px;
+            background: linear-gradient(to bottom, transparent, #02161e);
+        }
+
+        h1 {
+            position: relative;
+            z-index: 10;
+            color: white;
+            text-align: center;
+            padding: 0 1rem;
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            line-height: 1.2;
+        }
+
+        main {
+            padding: 2rem 1rem;
+        }
+
+        h2 {
+            color: white;
+            text-align: center;
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .button-container {
+            max-width: 28rem;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .time-button {
+            width: 100%;
+            color: white;
+            border: 2px solid white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.375rem;
+            font-size: 1.25rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .time-button:hover {
+            background-color: white;
+            color: #212529;
+        }
+
+        .time-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px white, 0 0 0 4px #212529;
+        }
+
+        @media (min-width: 768px) {
+            header {
+                height: 60vh;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="overlay"></div>
+        <div class="gradient"></div>
+        <h1>Relógio de Oração e<br>Jejum Corporativo</h1>
+    </header>
+
+    <main>
+        <h2>Selecione um horário abaixo:</h2>
+        <div class="button-container" id="timeSlots"></div>
+    </main>
+
+    <script>
+        const timeSlots = [
+            { time: "20:00 às 20:30", link: "https://chat.whatsapp.com/FZnr0uaFkS193SWdWnqWEO" },
+            { time: "20:30 às 21:00", link: "https://chat.whatsapp.com/H3tnGU2LnhOK1jQ62f0aCV" },
+            { time: "21:00 às 21:30", link: "https://chat.whatsapp.com/IZg5FOEj1s6IL2uBLRcDq1" },
+            { time: "21:30 às 22:00", link: "https://chat.whatsapp.com/LqLnTgO8CTlHgeGxZXZkwn" },
+            { time: "22:00 às 22:30", link: null, label: "Vigília na igreja" },
+            { time: "22:30 às 23:00", link: null, label: "Vigília na igreja" },
+            { time: "23:00 às 23:30", link: null, label: "Vigília na igreja" },
+            { time: "23:30 às 00:00", link: null, label: "Vigília na igreja" },
+            { time: "00:00 às 00:30", link: null, label: "Vigília na igreja" },
+            { time: "00:30 às 01:00", link: null, label: "Vigília na igreja" },
+            { time: "01:00 às 01:30", link: null, label: "Vigília na igreja" },
+            { time: "01:30 às 02:00", link: null, label: "Vigília na igreja" },
+            { time: "02:00 às 02:30", link: "https://chat.whatsapp.com/FRoonBcgQsUFDuFzewTShz" },
+            { time: "02:30 às 03:00", link: "https://chat.whatsapp.com/GAhoWyi3A7ZFt2y8Q4GDjo" },
+            { time: "03:00 às 03:30", link: "https://chat.whatsapp.com/KOe5X6bQpUAA0obLaVDKJg" },
+            { time: "03:30 às 04:00", link: "https://chat.whatsapp.com/GBBE8PoxxGWK3BIlTsyoZi" },
+            { time: "04:00 às 04:30", link: "https://chat.whatsapp.com/Jxd81TKSaPUDsEmwS93cXm" },
+            { time: "04:30 às 05:00", link: "https://chat.whatsapp.com/FvAaxvUhonvGeXBmPlWlFZ" },
+            { time: "05:00 às 05:30", link: "https://chat.whatsapp.com/FdyK5NToGBu6KdiSLH7k7l" },
+            { time: "05:30 às 06:00", link: "https://chat.whatsapp.com/LgyBPx5NOGV1z7IH10dlqX" },
+            { time: "06:00 às 06:30", link: "https://chat.whatsapp.com/GHKldKXzGqIFYxQKfmbjGZ" },
+            { time: "06:30 às 07:00", link: "https://chat.whatsapp.com/Hm5pbtqKTA74aqUbivyXvR" },
+            { time: "07:00 às 07:30", link: "https://chat.whatsapp.com/FoE2WnUbvdqCLX09Hi646z" },
+            { time: "07:30 às 08:00", link: "https://chat.whatsapp.com/CF8nFNOo0JGJDml15WY80Q" },
+        ];
+
+        const container = document.getElementById('timeSlots');
+
+        timeSlots.forEach(slot => {
+            if (slot.link) {
+                const link = document.createElement('a');
+                link.href = slot.link;
+                link.className = 'time-button';
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.textContent = slot.time;
+                container.appendChild(link);
+            } else {
+                const button = document.createElement('button');
+                button.className = 'time-button';
+                button.textContent = slot.label;
+                container.appendChild(button);
+            }
+        });
+    </script>
+</body>
+</html>
