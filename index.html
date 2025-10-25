@@ -32,6 +32,9 @@
             background-size: cover;
             background-position: center center;
             display: flex;
+            flex-direction: column;
+            text-align: center;
+            color: white;
             align-items: center;
             justify-content: center;
         }
@@ -61,6 +64,25 @@
             font-weight:500;
             letter-spacing: 0.05em;
             line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .event-date {
+            position: relative;
+            z-index: 10;
+            margin-top: 0.5rem;
+        }
+
+        .date-divider {
+            display: inline-block;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.25rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            padding: 0.5rem 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
         }
 
         main {
@@ -118,6 +140,11 @@
                 font-size: 3rem;
             }
 
+            .date-divider {
+                font-size: 1.5rem;
+                padding: 0.75rem 2rem;
+            }
+
             h2 {
                 font-size: 1.5rem;
             }
@@ -128,7 +155,12 @@
     <header>
         <div class="overlay"></div>
         <div class="gradient"></div>
-        <h1>Relógio de Oração e<br>Jejum Corporativo</h1>
+        <div>
+            <h1>Relógio de Oração e<br>Jejum Corporativo</h1>
+            <div class="event-date">
+                <span class="date-divider">31.10 | 01.11</span>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -142,14 +174,6 @@
             { time: "20:30 às 21:00", link: "https://chat.whatsapp.com/H3tnGU2LnhOK1jQ62f0aCV" },
             { time: "21:00 às 21:30", link: "https://chat.whatsapp.com/IZg5FOEj1s6IL2uBLRcDq1" },
             { time: "21:30 às 22:00", link: "https://chat.whatsapp.com/LqLnTgO8CTlHgeGxZXZkwn" },
-            { time: "22:00 às 22:30", link: null, label: "Vigília na igreja" },
-            { time: "22:30 às 23:00", link: null, label: "Vigília na igreja" },
-            { time: "23:00 às 23:30", link: null, label: "Vigília na igreja" },
-            { time: "23:30 às 00:00", link: null, label: "Vigília na igreja" },
-            { time: "00:00 às 00:30", link: null, label: "Vigília na igreja" },
-            { time: "00:30 às 01:00", link: null, label: "Vigília na igreja" },
-            { time: "01:00 às 01:30", link: null, label: "Vigília na igreja" },
-            { time: "01:30 às 02:00", link: null, label: "Vigília na igreja" },
             { time: "02:00 às 02:30", link: "https://chat.whatsapp.com/FRoonBcgQsUFDuFzewTShz" },
             { time: "02:30 às 03:00", link: "https://chat.whatsapp.com/GAhoWyi3A7ZFt2y8Q4GDjo" },
             { time: "03:00 às 03:30", link: "https://chat.whatsapp.com/KOe5X6bQpUAA0obLaVDKJg" },
